@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:class="${themesType}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제품 가격 차트</title>
+</head>
+<body>
+
+<!-- 페이지의 헤더 부분 -->
+<header style="text-align: center; padding: 20px; background-color: #f8f9fa;">
+    <h1>제품 가격 차트</h1>
+    <p>제품의 가격 변동을 확인해보세요.</p>
+</header>
+
+<!-- 차트가 렌더링될 영역 -->
+<main>
+    <div id="app" style="width: 80%; margin: 0 auto; padding-top: 20px;">
+        <!-- 차트를 그릴 캔버스 -->
+        <canvas id="priceChart"></canvas>
+    </div>
+</main>
+
+<!-- 페이지의 푸터 부분 -->
+<!--<footer style="text-align: center; padding: 10px; background-color: #f8f9fa;">-->
+<!--    <p>footer</p>-->
+<!--</footer>-->
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- 하드코딩된 가격 데이터 -->
+<script>
+    const priceData = {
+        prices: [
+            { "date": "2025-03-01", "price": 100 },
+            { "date": "2025-03-02", "price": 110 },
+            { "date": "2025-03-03", "price": 105 },
+            { "date": "2025-03-04", "price": 120 },
+            { "date": "2025-03-05", "price": 125 }
+        ]
+    };
+
+    // 가격 데이터 포맷 변경 (labels와 prices 배열로 변환)
+    const labels = priceData.prices.map(price => price.date);
+    const prices = priceData.prices.map(price => price.price);
+
+    // 차트 데이터 설정
+    const chartData = {
+        labels: labels, // 날짜 (X축)
+        datasets: [
+            {
+                label: '제품 가격',
+                data: prices, // 가격 (Y축)
+                borderColor: '#42A5F5',
+                backgroundColor: 'rgba(66, 165, 245, 0.2)',
+                fill: true,
+                tension: 0.4, // 곡선 조정
+            }
+        ]
+    };
+
+    // 차트 옵션 설정
+    const chartOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: '날짜'
+                }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: '가격'
+                },
+                ticks: {
+                    beginAtZero: true
+                }
+            }
+        }
+    };
+
+    // 차트를 그릴 캔버스 요소
+    const ctx = document.getElementById('priceChart').getContext('2d');
+
+    // Chart.js로 실제 차트 그리기
+    new Chart(ctx, {
+        type: 'line', // 차트 타입 (선 그래프)
+        data: chartData,
+        options: chartOptions
+    });
+</script>
+
+</body>
+</html>
