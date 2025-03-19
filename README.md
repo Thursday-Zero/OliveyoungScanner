@@ -28,9 +28,9 @@ _"협업 능력 강화 및 개발 능력 향상"_
 | 역할          | 이름 |  기술 스택 배지                                                                 | 주요 관심 분야                          |
 |---------------|------|-----------------------------------------------------------------------|----------------------------------------|
 | **PM / Developer** | 김수현 | ![Python](https://img.shields.io/badge/Python-3776AB) ![CICD](https://img.shields.io/badge/-CI%2FCD-00A86B?logo=ci-cd&logoColor=white)   | CI/CD 파이프라인 설계             |
+| **Product Planner** | 이효민 |  ![Market Research](https://img.shields.io/badge/Market_Research-Analytics-FF5733) ![User Experience](https://img.shields.io/badge/User_Experience-UX-00A86B) | 서비스 기획, 사용자 니즈 분석 |
 | **Developer** | 임예지 | ![SQL](https://img.shields.io/badge/SQL-Advanced-003B57) | 웹 개발(Frontend/Backend)                  |
 | **Developer** | 박혁인 | ![Python](https://img.shields.io/badge/Python-3776AB) | 크롤링 개발                  |
-| **Product Planner** | 이효민 |  ![Market Research](https://img.shields.io/badge/Market_Research-Analytics-FF5733) ![User Experience](https://img.shields.io/badge/User_Experience-UX-00A86B) | 서비스 기획, 사용자 니즈 분석 |
 
 
 ## 🚀 프로젝트 로드맵 (Project Roadmap)
